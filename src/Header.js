@@ -11,9 +11,9 @@ function Header(props) {
     return (
         <>
             <h1 className={styles.title}>{props.title}</h1>
-            <Button onClick={onToggleTheme}>
-                Mudar tema
-            </Button>
+                <Button onClick={onToggleTheme}>
+                    Mudar tema
+                </Button>
             <div>{props.children}</div>
         </>
     );

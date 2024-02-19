@@ -7,16 +7,19 @@ export default function PostHeader(props)
     return (
         <>
             <strong>
-                {props.post.read && <s>props.post.title</s>}
+                {props.post.read && <s>{props.post.title}</s>}
                 {!props.post.read && props.post.title}
             </strong>
             <Button onClick={() => props.onRemove(props.post.id)}>Remover</Button>
+            <Button onClick={() => props.onRead(props.post.id)}>Ler</Button>
+
         </>
     )
 }
 
 PostHeader.propTypes ={
     onRemove: PropTypes.func,
+    onRead: PropTypes.func,
     post: PropTypes.shape({
         id: PropTypes.number.isRequired,
         title: PropTypes.string.isRequired,

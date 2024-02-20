@@ -1,8 +1,8 @@
 import React, {Fragment, useState, createContext} from "react";
-import Post from './Post';
-import Header from './Header';
-import { ThemeProvider } from './ThemeContext';
-import Button from "./Button";
+import Post from '../Post';
+import Header from '../Header';
+import { ThemeProvider } from '../../context/ThemeContext';
+import Button from "../Button";
 
 
 function App()

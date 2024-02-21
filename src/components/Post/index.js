@@ -1,13 +1,13 @@
 import React, {Fragment} from "react";
 import PropTypes, { number } from 'prop-types';
 import PostHeader from "./PostHeader";
-import styles from './Post.scss';
+import {Container, Subtitle, Rate } from './styles'
 
 function Post(props)
 {
 
     return (
-            <article className={props.post.removed ? styles.postDeleted : styles.post}>
+            <Container removed={props.post.removed}>
                 <PostHeader
                     onRemove={props.onRemove}
                     onRead={props.markPost}
@@ -17,9 +17,9 @@ function Post(props)
                         read: props.post.read
                     }}
                  />
-                <small>{props.post.subtitle}</small>
-                <div>{props.likes ? 'likes:'+props.likes: ''}</div>
-            </article>
+                <Subtitle>{props.post.subtitle}</Subtitle>
+                <Rate>{props.likes ? 'likes:'+props.likes: ''}</Rate>
+            </Container>
 
         );
 }
@@ -32,7 +32,9 @@ Post.propTypes ={
         title: PropTypes.string.isRequired,
         subtitle: PropTypes.string.isRequired,
         likes: PropTypes.number.isRequired,
-        read: PropTypes.bool.isRequired
+        read: PropTypes.bool.isRequired,
+        removed: PropTypes.bool.isRequired
+
     }).isRequired
 }
 

@@ -4,6 +4,7 @@ import Header from '../Header';
 import { ThemeProvider } from '../../context/ThemeContext';
 import Button from "../Button";
 
+import { Title } from "./styles";
 
 function App()
 {

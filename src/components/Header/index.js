@@ -3,14 +3,17 @@ import PropTypes from 'prop-types';
 import Button from "../Button";
 import styles from "./Header.scss";
 
+import Title from "../Title";
+
 import { ThemeContext } from "../../context/ThemeContext";
+
+
 
 function Header(props) {
     const { onToggleTheme } = useContext(ThemeContext);
-    //com duas chaves significa obj javascript
     return (
         <>
-            <h1 className={styles.title}>{props.title}</h1>
+            <Title>{props.title}</Title>
                 <Button onClick={onToggleTheme}>
                     Mudar tema
                 </Button>
